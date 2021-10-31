@@ -5,11 +5,13 @@ This is a React App of a webpage counting shots. It uses functional components w
 ## Usage
 ```
 npm install
+npm install json-server
+
+# Run server on http://localhost:5000
+npm server
 
 # Run on http://localhost:3000
 npm start
 
-# Build for prod
-npm run build
 ```
 
