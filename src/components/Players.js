@@ -1,52 +1,18 @@
 import React from 'react';
-import { Card } from 'semantic-ui-react'
+import Player from './Player';
 
-class Counter extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.addOne = this.addOne.bind(this);
-    this.state = {
-      count: 0
-    }
-  }
-
-  addOne() {
-    this.setState((preState) => {
-      return {
-        count: preState.count + 1
-      };
-    });
-  }
-
-  render(name) {
+const Players = ({players, updateShotList }) => {
     return (
-      <div>
-        <h2>Antal: {this.state.count}</h2>
-        <button onClick={this.addOne}>+1</button>
-      </div>
-    );
-  }
-}
-
-let names = ['Gabriel', 'Axel', 'Emil', 'Emma', 'Jakob', 'Josefine', 'Alma', 'Samuel', 'Teo', 'Vini', 'William', 'Ylva', 'Emma-US']
-
-function renderPlayers() {
-  return names.map((player) => {
-    return (
-      <Card key={player}>
-        <Card.Content>
-          <Card.Header>{player}</Card.Header>
-          <Counter></Counter>
-        </Card.Content>
-      </Card>
+        <>
+            {players.map((player) => (
+                <Player
+                    key={player.id}
+                    player={player}
+                    updateShotList={updateShotList}
+                />
+            ))}
+        </>
     )
-  });
 }
 
-const CardWithPlayers = () => (
-  <Card.Group centered>
-    {renderPlayers()}
-  </Card.Group>
-)
-
-export default CardWithPlayers;
+export default Players;

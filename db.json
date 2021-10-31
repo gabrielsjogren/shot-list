@@ -1,0 +1,74 @@
+{
+  "players": [
+    {
+      "id": 0,
+      "name": "Gabriel",
+      "shots": 1
+    },
+    {
+      "id": 1,
+      "name": "Axel",
+      "shots": 1
+    },
+    {
+      "id": 2,
+      "name": "Emil",
+      "shots": 2
+    },
+    {
+      "id": 3,
+      "name": "Emma",
+      "shots": 0
+    },
+    {
+      "id": 4,
+      "name": "Jakob",
+      "shots": 1
+    },
+    {
+      "id": 5,
+      "name": "Josefine",
+      "shots": 2
+    },
+    {
+      "id": 6,
+      "name": "Alma",
+      "shots": 0
+    },
+    {
+      "id": 7,
+      "name": "Samuel",
+      "shots": 0
+    },
+    {
+      "id": 8,
+      "name": "Teo",
+      "shots": 0
+    },
+    {
+      "id": 9,
+      "name": "Vini",
+      "shots": 2
+    },
+    {
+      "id": 10,
+      "name": "William",
+      "shots": 0
+    },
+    {
+      "id": 11,
+      "name": "Ylva",
+      "shots": 0
+    },
+    {
+      "id": 12,
+      "name": "Emma-US",
+      "shots": 2
+    },
+    {
+      "id": 13,
+      "name": "Sara",
+      "shots": 1
+    }
+  ]
+}
