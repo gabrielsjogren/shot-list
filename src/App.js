@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import AppHeader from './components/Header';
 import { Card } from 'semantic-ui-react'
 import Players from './components/Players';
+import ShotAdder from './components/ShotAdder';
 
 import './App.css';
 
@@ -60,6 +61,7 @@ const App = () => {
                 'No players right now'
               )}
           </Card.Group>
+          <ShotAdder players={players} />
       </div>
     </div>
   );
