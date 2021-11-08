@@ -8,11 +8,11 @@ const Player = ({ player, updateShotList }) => {
                 <Card.Header>{player.name}</Card.Header>
                 <div>
                     <h2>Antal: {player.shots}</h2>
-                    <button onClick={() => {
+                    {/* <button onClick={() => {
                         player.shots += 1
                         console.log(player.shots)
                         updateShotList(player)
-                        }}>+1</button>
+                        }}>+1</button> */}
                 </div>
             </Card.Content>
         </Card>

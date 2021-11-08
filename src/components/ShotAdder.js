@@ -1,11 +1,12 @@
 import React, { useState} from 'react';
 import { Form, Grid, Button, Message } from 'semantic-ui-react'
 
-const ShotAdder = ({ players }) => {
-    const [personalName, setName] = useState('')
+const ShotAdder = ({ players, fetchId, updateShotList }) => {
+    const [currentPerson, setPerson] = useState([])
     const [reason, setReason] = useState('')
-    const [currentId, setId] = useState(0)
+    const [currentId] = useState(0)
     const [lastName, setLastName] = useState('')
+    const [nbrOfShots, setShots] = useState(0)
     const [
         isSuccessfullySubmitted,
         setIsSuccessfullySubmitted,
@@ -17,12 +18,18 @@ const ShotAdder = ({ players }) => {
         names.push({
             key: player.id,
             text: player.name,
-            value: player.name
+            value: player.id
         }))
-    }) 
+    })
+
+    const onChange = async (e, data) => {
+        const person = await fetchId(data.value)
+        setPerson(person)
+    }
 
     const onSubmit = async e => {
         //e.preventDefault()
+        const today = new Date(Date.now())
         await fetch(`http://localhost:5000/reasons`, {
             method: 'POST', 
             headers: {
@@ -31,14 +38,16 @@ const ShotAdder = ({ players }) => {
             body: JSON.stringify(
                 {
                 "id": currentId,
-                "name": personalName,
+                "name": currentPerson.name,
+                "nbrOfShots": nbrOfShots,
+                "date": today.toLocaleTimeString() + ", " + today.toLocaleDateString(),
                 "description": reason
                 }
             )
         })
-        setLastName(personalName)
+        updateShotList(currentPerson, nbrOfShots)
+        setLastName(currentPerson.name)
         setIsSuccessfullySubmitted(true)
-        setName('')
         setReason('')
         }
 
@@ -49,10 +58,13 @@ const ShotAdder = ({ players }) => {
                         <Form.Dropdown
                             placeholder='Välj syndare...'
                             selection
-                            options={names} 
-                            value={personalName}
-                            onChange={(e, data) => setName(personalName => personalName = data.value)}
-                             />
+                            options={names}
+                            onChange={onChange} />
+                        <Form.Input 
+                            type='number' 
+                            placeholder='Antal shots...'
+                            value={nbrOfShots}
+                            onChange={(e) => setShots(e.target.value)}  ></Form.Input>
                         <Form.TextArea
                             placeholder='Anledning till straffshot...'
                             value={reason}
