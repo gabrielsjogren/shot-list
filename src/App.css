@@ -114,3 +114,7 @@ h4 {
 .list li:hover .delete-btn {
   opacity: 1;
 }
+
+.add-shot {
+  min-width: 600px;
+}

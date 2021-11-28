@@ -100,7 +100,7 @@ const App = () => {
             Tillbaka
           </Link>
           </Header>
-          <div>
+          <div className="add-shot">
             <ShotAdder players={players} fetchId={fetchId} updateShotList={updateShotViaForm} />
               <Card.Group centered>
                 <ShowReasons reasons={ resaons }></ShowReasons>
