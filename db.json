@@ -3,7 +3,7 @@
     {
       "id": 0,
       "name": "Gabriel",
-      "shots": 1
+      "shots": 2
     },
     {
       "id": 1,
@@ -72,9 +72,6 @@
     }
   ],
   "reasons": [
-    {
-      "id": 0,
-      "description": "Plockade inte undan efter sig"
-    }
+    
   ]
 }
